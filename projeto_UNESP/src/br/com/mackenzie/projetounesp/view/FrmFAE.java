@@ -209,7 +209,7 @@ public class FrmFAE extends javax.swing.JFrame {
         valoresDAO.pesquisa(valores);
         txtfae.setText(valores.getValores());
         
-        if(txtfae==null){
+        if(valores.getValores() == null){
             JOptionPane.showMessageDialog(null,"Valores não cadastrados");
         }
     }//GEN-LAST:event_btnprocessarActionPerformed

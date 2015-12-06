@@ -13,6 +13,10 @@ public class Valores {
    int  cod_valores;
    private String nome;
    private String valores;
+   
+   //Para o formulario FrmFAIE
+   private String valores_ini;
+   private String valores_final;
 
     public int getCod_valores() {
         return cod_valores;
@@ -38,6 +42,19 @@ public class Valores {
         this.valores = valores;
     }
 
-    
-   
+    public String getValores_ini() {
+        return valores_ini;
+    }
+
+    public void setValores_ini(String valores_ini) {
+        this.valores_ini = valores_ini;
+    }
+
+    public String getValores_final() {
+        return valores_final;
+    }
+
+    public void setValores_final(String valores_final) {
+        this.valores_final = valores_final;
+    }
 }
