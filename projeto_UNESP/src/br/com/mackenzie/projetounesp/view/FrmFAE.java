@@ -5,6 +5,8 @@
  */
 package br.com.mackenzie.projetounesp.view;
 
+import br.com.mackenzie.projetounesp.dao.ValoresDAO;
+import br.com.mackenzie.projetounesp.modelo.Valores;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.parser.TokenType;
 
@@ -197,15 +199,18 @@ public class FrmFAE extends javax.swing.JFrame {
     }//GEN-LAST:event_jList1MouseClicked
 
     private void btnprocessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprocessarActionPerformed
-        // TODO add your handling code here:
-        String orgao;
-        orgao=(txtorgao.getText());
-
+        Valores valores = new Valores();
+        ValoresDAO valoresDAO = new ValoresDAO();
         
-        if(orgao.equals("Clique em um orgão")){
-            JOptionPane.showMessageDialog(null,"Valor inválido");
-        }else{
-            JOptionPane.showMessageDialog(null,"Carregando processos...");
+        valores.setNome(txtorgao.getText());
+        valores.setCod_valores(Integer.parseInt(txtenergia.getText()));
+        valoresDAO.pesquisa(valores);
+        
+        valoresDAO.pesquisa(valores);
+        txtfae.setText(valores.getValores());
+        
+        if(txtfae==null){
+            JOptionPane.showMessageDialog(null,"Valores não cadastrados");
         }
     }//GEN-LAST:event_btnprocessarActionPerformed
 
